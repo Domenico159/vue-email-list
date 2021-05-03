@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    
+
+    <main id="app">
+
+        <h1 v-if="completed"
+        >Ecco 10 email random</h1>
+
+        <div v-if="statoLoading"
+            class="loading">
+            <div :class="{active:statoLoading}"
+             class="bar"></div>
+            </div>
+
+        <div class="container">
+
+            <div class="box">
+                <ul>
+                    <li v-for="element in mail">
+                        <a href="#">{{ element }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn">
+                <button @click="generated"
+                >Genera 10 random email</button>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- Js -->
+    <!-- Axion -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Main js -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
