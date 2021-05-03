@@ -12,7 +12,6 @@ const main = new Vue({
 
         generated(){
 
-            this.getEmail()
             this.mail = []
 
             this.completed = false
@@ -23,19 +22,21 @@ const main = new Vue({
 
            let cont = setInterval(() => {
                 
-                this.mail.push(this.getEmail())
+              this.getEmail();
                 count++
 
                 if(count === 10){
-                    clearInterval(cont)
+                    setTimeout(() => {
+                        clearInterval(cont)
                     this.statoLoading = false
                     this.completed = true
 
                     console.log(this.mail);
+                    },500);
 
                 }
 
-            },500);
+            },800);
             
            
 
@@ -43,11 +44,11 @@ const main = new Vue({
         getEmail(){
 
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(function (response) {
+            .then( (result) =>{
               // handle success
-              return console.log(response.data.response);;
+              return  this.mail.push(result.data.response)
             })
-            .catch(function (error) {
+            .catch( (error)=> {
               // handle error
               return console.log(error);
             })

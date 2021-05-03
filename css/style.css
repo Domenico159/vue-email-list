@@ -69,7 +69,7 @@ main{
 }
 
 .loading .bar.active{
-    animation: bar 4.8s forwards;
+    animation: bar 8s linear forwards;
 }
 
 @keyframes bar{
