@@ -19,6 +19,7 @@ main{
 .container{
     display: flex;
     margin-top: 80px;
+    flex-direction: column;
 }
 
 .btn button{
@@ -29,6 +30,7 @@ main{
     cursor: pointer;
     border-radius: 15px;
     transition: transform 0.3s;
+    margin-bottom: 25px;
 }
 
 .btn button:hover{
@@ -39,16 +41,15 @@ main{
     margin-right: 50px;
 }
 
-.box ul li{
-    list-style: none;
-    margin-bottom: 15px;
-    background-color: aqua;
-    padding: 10px;
+
+.box ol li{
+    margin-bottom: 25px;
 }
 
-.box ul li a {
+.box ol li a {
     text-decoration: none;
     color: #000;
+    padding: 20px 5px;
 }
 
 
@@ -65,7 +66,7 @@ main{
 .loading .bar{
     height: 100%;
     width: 0;
-    background-color: red;
+    background-color: aqua;
 }
 
 .loading .bar.active{

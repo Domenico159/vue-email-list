@@ -26,16 +26,17 @@
 
         <div class="container">
 
-            <div class="box">
-                <ul>
-                    <li v-for="element in mail">
-                        <a href="#">{{ element }}</a>
-                    </li>
-                </ul>
-            </div>
             <div class="btn">
                 <button @click="generated"
                 >Genera 10 random email</button>
+            </div>
+
+            <div class="box">
+                <ol>
+                    <li v-for="element in mail">
+                        <a href="#">{{ element }}</a>
+                    </li>
+                </ol>
             </div>
         </div>
 
